@@ -2,6 +2,11 @@
 
 Looking for a non-ESX script to make weapons show up on a players back if they have it in their weapon wheel? Look no further! This is a great script for RP servers.
 
+## Edits
+ 
+Toggle added, code organized -by FatPlatapus
+
+
 <details>
 <summary>Screenshot</summary>
 <br>
@@ -24,3 +29,4 @@ Looking for a non-ESX script to make weapons show up on a players back if they h
 - Put the ``weapons-on-back`` folder into your server's ``resources`` folder.
 - Add ``start weapons-on-back`` to your server's ``server.cfg`` file.
 - Enjoy!
+
