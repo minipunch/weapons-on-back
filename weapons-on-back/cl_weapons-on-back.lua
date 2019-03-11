@@ -40,35 +40,46 @@ local SETTINGS = {
         ["w_lr_firework"] = 2138347493
     }
 }
+--- Toggle Settings ---
+local toggleOn = 0 --- If you want to activate toggle, change value to 1 - 1 for yes, 0 for no.
+local toggle = (1,19) --- Change toggle key here. Currently: left alt.
 
 --- Other Variables ---
 local attached_weapons = {}
-local me = GetPlayerPed(-1)
 local bone = GetPedBoneIndex(GetPlayerPed(-1), boneNumber)
-local toggle = (1,19) --- Change toggle key here. Currently: left alt.
 
 
-if (IsControlJustReleased(toggle)) then --- Toggle here
+Citizen.CreateThread(function()
+    while true do
+        local me = GetPlayerPed(-1)
+    if (IsControlJustReleased(toggle)) and toggleOn == 1 then --- Toggle here
       ------------------------------------------------
       -- attaches weapon if player has large weapon --
       ------------------------------------------------
-    for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
-        if HasPedGotWeapon(me, wep_hash, false) then
-            if not attached_weapons[wep_name] then
+        for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
+            if HasPedGotWeapon(me, wep_hash, false) then
+                if not attached_weapons[wep_name] then
                   AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
+                end
             end
         end
+    Wait(1) -- this just makes sure that toggle doesnt overlap
+    elseif toggleOn == 0 then
+        for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
+            if HasPedGotWeapon(me, wep_hash, false) then
+                if not attached_weapons[wep_name] then
+                AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
+                end
+             end
+        end
     end
-end
-
-Wait(100) -- this just makes sure that toggle doesnt overlap
 
       -------------------------------------------------------------
       -- remove from back if equipped / dropped / toggle pressed --
       -------------------------------------------------------------
 for name, attached_object in pairs(attached_weapons) do
     -- equipped? delete it from back:
-    if GetSelectedPedWeapon(me) ==  attached_object.hash or not HasPedGotWeapon(me, attached_object.hash, false) or IsControlJustReleased(toggle) then -- equipped or not in weapon wheel or toggle pressed
+    if GetSelectedPedWeapon(me) ==  attached_object.hash or not HasPedGotWeapon(me, attached_object.hash, false) or IsControlJustReleased(toggle) and toggleOn = 1 then -- equipped or not in weapon wheel or toggle pressed
             DeleteObject(attached_object.handle)
             attached_weapons[name] = nil
           end
