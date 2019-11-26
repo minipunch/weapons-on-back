@@ -1,6 +1,6 @@
 # Weapons On Back
 
-Looking for a non-ESX script to make weapons show up on a players back if they have it in their weapon wheel? Look no further! This is a great script for RP servers.
+Looking for a framework-independent script to make weapons show up on a players back if they have it in their weapon wheel? Look no further! This is a great script for RP servers.
 
 <details>
 <summary>Screenshot</summary>
