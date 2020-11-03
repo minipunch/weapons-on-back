@@ -18,7 +18,7 @@ local SETTINGS = {
       ["prop_ld_jerrycan_01"] = 883325847,
       -- assault rifles:
       ["w_ar_carbinerifle"] = -2084633992,
-      ["w_ar_carbineriflemk2"] = GetHashKey("WEAPON_CARBINERIFLE_Mk2"),
+      ["w_ar_carbineriflemk2"] = GetHashKey("WEAPON_CARBINERIFLE_MK2"),
       ["w_ar_assaultrifle"] = -1074790547,
       ["w_ar_specialcarbine"] = -1063057011,
       ["w_ar_bullpuprifle"] = 2132975508,
@@ -27,7 +27,7 @@ local SETTINGS = {
       ["w_sb_microsmg"] = 324215364,
       ["w_sb_assaultsmg"] = -270015777,
       ["w_sb_smg"] = 736523883,
-      ["w_sb_smgmk2"] = GetHashKey("WEAPON_SMGMk2"),
+      ["w_sb_smgmk2"] = GetHashKey("WEAPON_SMG_MK2"),
       ["w_sb_gusenberg"] = 1627465347,
       -- sniper rifles:
       ["w_sr_sniperrifle"] = 100416529,
