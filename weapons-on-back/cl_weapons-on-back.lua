@@ -53,7 +53,7 @@ Citizen.CreateThread(function()
       ---------------------------------------
       for wep_name, wep_hash in pairs(SETTINGS.compatable_weapon_hashes) do
           if HasPedGotWeapon(me, wep_hash, false) then
-              if not attached_weapons[wep_name] then
+              if not attached_weapons[wep_name] and GetSelectedPedWeapon(me) ~= wep_hash then
                   AttachWeapon(wep_name, wep_hash, SETTINGS.back_bone, SETTINGS.x, SETTINGS.y, SETTINGS.z, SETTINGS.x_rotation, SETTINGS.y_rotation, SETTINGS.z_rotation, isMeleeWeapon(wep_name))
               end
           end
