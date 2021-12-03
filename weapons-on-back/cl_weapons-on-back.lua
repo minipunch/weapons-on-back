@@ -1,6 +1,6 @@
 -- this script puts certain large weapons on a player's back when it is not currently selected but still in there weapon wheel
 -- by: minipunch
--- originally made for USA Realism RP (https://usarrp.net)
+-- originally made for USA Realism RP (https://usarrp.gg)
 
 -- Add weapons to the 'compatable_weapon_hashes' table below to make them show up on a player's back (can use GetHashKey(...) if you don't know the hash) --
 local SETTINGS = {
