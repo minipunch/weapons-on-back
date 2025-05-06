@@ -1,3 +1,7 @@
+# DEPRECATED - NO LONGER MAINTAINED
+
+If you're looking for this type of script that works with QB/QBox + Ox Inventory, see this script that actually works: https://forum.cfx.re/t/paid-weapons-on-back/292036
+
 # Weapons On Back
 
 Looking for a framework-independent script to make weapons show up on a player's back if they have it in their weapon wheel? Look no further! This is a great script for RP servers.
